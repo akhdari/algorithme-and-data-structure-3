@@ -77,19 +77,20 @@ void displayMatrix(int** matrix, int size) {
 
 int main() {
     int size, nullCountA, nullCountB; 
-        printf("enter size of both matrices A and B:");
+    printf("enter size of both matrices A and B:");
     scanf("%d",&size);
     printf("A:\n");
-        int** A = new int*[size];
+    int** A = new int*[size];
     int** B = new int*[size];
     int** result = new int*[size];
     //
     for (int i = 0; i < size; i++) {
-    A[i] = new int[size];
-    B[i] = new int[size];
-    result[i] = new int[size];
-}
+        A[i] = new int[size];
+        B[i] = new int[size];
+        result[i] = new int[size];
+    }
 
+    printf("A:\n");
     initializeMatrices(A, size);
     printf("B:\n");
     initializeMatrices(B, size);
@@ -113,10 +114,8 @@ int main() {
     // Count null values
     nullCountA = countNullValues(A, size);
     nullCountB = countNullValues(B, size);
-    printf("null values in A: %d", nullCountA);
-    printf("\n");
-    printf("null values in B: %d", nullCountB);
-    printf("\n");
+    printf("null values in A: %d\n", nullCountA);
+    printf("null values in B: %d\n", nullCountB);
     
     
     // Swap min/max
@@ -127,12 +126,12 @@ int main() {
     displayMatrix(B, size);
     
     for (int i = 0; i < size; i++) {
-    delete[] A[i];  
-    delete[] B[i];  
-    delete[] result[i]; 
-}
-delete[] A;  
-delete[] B;  
-delete[] result;  
+        delete[] A[i];  
+        delete[] B[i];  
+        delete[] result[i]; 
+    }
+    delete[] A;  
+    delete[] B;  
+    delete[] result;  
     return 0;
 }
